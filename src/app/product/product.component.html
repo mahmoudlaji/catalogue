@@ -1,0 +1,45 @@
+<div class="container">
+    <form #f="ngForm" (ngSubmit)="searchProduct()">
+        <div class="input-group">
+            <label class="input-group-text">search</label>
+            <input name="keyword" class="form-control" type="text" [(ngModel)]="DATA.keyword">
+            <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
+          </div>
+        </form>
+    <div class="card">
+        <div class="card-header" style="text-align: center;"><strong>Table des Produits</strong></div>
+       
+   
+        <div class="card-body " ><table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>Prix</th>
+                <th>Ref</th>
+                <th>Promotion</th>
+                <th>Select Promotion</th>
+                <th>Delete</th>
+                <th>Uptade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of prodData">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.prix}}</td>
+                <td>{{item.ref}}</td>
+                <td><i *ngIf="item.promotion==true" class="bi bi-gift-fill text-info"></i></td>
+                <td><button type="button" (click)="setPromotion(item)">
+                    <span *ngIf="item.promotion==false" class="btn btn-danger">Promotion On</span>
+                    <span *ngIf="item.promotion==true" class="btn btn-success">Promotion Off</span>
+                </button></td>
+                <td><button class="btn btn-danger" type="button" (click)="delete(item)"><i class="bi bi-trash3-fill">Delete</i></button></td>
+                <td><button class="btn btn-info" type="button" (click)="gotoEditProduct(item)" ><i class="bi bi-pen-fill">Update</i></button></td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary" type="button" (click)="addproduct()">New Product</button></div>
+   
+</div>
+</div>

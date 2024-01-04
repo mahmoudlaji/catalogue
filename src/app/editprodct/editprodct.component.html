@@ -1,0 +1,39 @@
+<div class="container pt-5 " style="width: 450px;">
+    <!--<div class="alert alert-danger">
+      <strong>Error : Please check your email or password</strong> 
+    </div>-->
+      <div class="card">
+          <div class="card-header" style="text-align: center;">Update Product</div>
+          <div class="card-body">
+              <form [formGroup]="editformgrp" (ngSubmit)="UPDATEPRODUCT()">
+                  <div class="mb-3 mt-3">
+                    <label  class="form-label">Id:</label>
+                    <input type="id" class="form-control" formControlName="id"  name="id">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">NAME:</label>
+                    <input type="text" class="form-control"  formControlName="name" name="name" >
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label" >Price:</label>
+                    <input type="text" class="form-control" formControlName="prix"  name="prix" >
+                  </div>
+                  <div class="mb-3">
+                    <label for="ref" class="form-label">Ref:</label>
+                    <input type="text" class="form-control"  formControlName="ref"  name="ref" >
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" name="promotion" formControlName="promotion" type="checkbox"  >
+                    <label  class="form-check-label"  >Promotion</label>
+                   
+                  </div>
+                 
+                  
+                  
+                  <button type="submit" class="btn btn-primary" >Update</button>
+                </form>
+          </div>
+          
+        </div>
+  </div>
+  

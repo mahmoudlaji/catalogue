@@ -1,0 +1,24 @@
+<div class="container pt-5 " style="width: 450px;">
+  <div class="alert alert-danger" *ngIf="alertvar">
+    <strong>Error : Please check your email or password</strong> 
+  </div>
+    <div class="card">
+        <div class="card-header" style="text-align: center;">Authentification</div>
+        <div class="card-body">
+            <form >
+                <div class="mb-3 mt-3">
+                  <label for="email" class="form-label">Email:</label>
+                  <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"[(ngModel)]="loginData.email">
+                </div>
+                <div class="mb-3">
+                  <label for="pwd" class="form-label">Password:</label>
+                  <input type="password" class="form-control" id="psw" placeholder="Enter password" name="psw" [(ngModel)]="loginData.psw">
+                </div>
+               
+                <button [disabled]="!loginData.email||!loginData.psw" type="submit" class="btn btn-primary marginbtn marginright" (click)="log()">Login</button>
+                <button type="button" class="btn btn-success marginbtn" routerLink="">Register</button>
+              </form>
+        </div>
+        
+      </div>
+</div>
